@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "ui/*": [
+        "./src/UI/*"
+      ],
+      "theme/*": [
+        "./src/Utils/Theme/*"
+      ],
+      "helpers/*": [
+        "./src/Utils/Helpers/*"
+      ],
+      "assets/*": [
+        "./src/Assets/*"
+      ],
+      "screens/*": [
+        "./src/UI/Screens/*"
+      ],
+      "components/*": [
+        "./src/UI/Components/*"
+      ],
+      "controllers/*": [
+        "./src/Controllers/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.js"
+  ]
+}
+

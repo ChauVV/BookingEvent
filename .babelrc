@@ -1,0 +1,36 @@
+{
+  "presets": ["module:metro-react-native-babel-preset"],
+  
+  "plugins": [
+    ["@babel/plugin-transform-flow-strip-types"],
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "extensions": [
+          ".js",
+          ".ios.js",
+          ".android.js"
+        ],
+        "alias": {
+          "ui": "./src/UI",
+          "theme": "./src/Utils/Theme",
+          "helpers": "./src/Utils/Helpers",
+          "assets": "./src/Assets",
+          "screens": "./src/UI/Screens",
+          "components": "./src/UI/Components",
+          "controllers": "./src/Controllers"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-remove-console"
+      ]
+    }
+  }
+}
