@@ -41,7 +41,7 @@ const MainStack = () => {
         name="BookingList"
         component={BookingList}
       />
-      <MainSk.Screen name="CreateBooking" component={CreateBooking} />
+      <MainSk.Screen name="CreateBooking" component={CreateBooking}  options={{title: 'Create New Booking'}}/>
     </MainSk.Navigator>
   );
 };
