@@ -11,8 +11,8 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 
 const LoginScreen = (props) => {
   const {login, isLoging} = props;
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('hr1@gmail.com');
+  const [password, setPassword] = useState('123456aA');
 
   const disabled = username.length === 0 || password.length === 0;
 
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 250,
+    marginTop: 200,
   },
   btn: {
     borderRadius: 5,

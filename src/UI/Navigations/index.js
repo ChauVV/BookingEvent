@@ -37,7 +37,7 @@ const MainStack = () => {
         headerStyle: {backgroundColor: Colors.header},
       }}>
       <MainSk.Screen
-        options={{headerShown: false, title: ' '}}
+        options={{title: 'DashBoard'}}
         name="BookingList"
         component={BookingList}
       />
@@ -55,7 +55,8 @@ const RootNavigation = () => {
           headerShown: false,
         }}>
         <Root.Screen name="AuthorizationStack" component={AuthorizationStack} />
-        <Root.Screen name="MainStack" component={MainStack} />
+        <Root.Screen name="MainStack" component={MainStack} 
+        options={{headerShown: false}} />
       </Root.Navigator>
     </NavigationContainer>
   );

@@ -1,19 +1,30 @@
-import React from 'react';
-import {StyleSheet, View} from 'react-native';
-// import PropTypes from 'prop-types'
+import React, {useEffect} from 'react';
+
+import {connect} from 'react-redux';
+import {Constants} from 'helpers';
+
+import Screen from './Screen';
 
 const BookingList = (props) => {
-  return <View style={styles.container} />;
+  const {getBooking, username, bookings} = props
+
+  useEffect(() => {
+    console.log('useEffect: ', username);
+    getBooking({username});
+  }, [])
+  
+  return <Screen bookings={[...bookings]} />;
 };
 
-export default BookingList;
-
-BookingList.defaultProps = {};
-BookingList.propTypes = {};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'lightgreen',
-  },
+const mapStateToProps = (state) => ({
+  username: state.authen.username,
+  bookings: state.bookings.data
 });
+const mapactionsTypeToProps = (dispatch) => ({
+  getBooking: (payload) =>
+    dispatch({
+      type: Constants.ACTION_TYPES.GET_BOOKING,
+      payload,
+    }),
+});
+export default connect(mapStateToProps, mapactionsTypeToProps)(BookingList);

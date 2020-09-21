@@ -1,17 +1,9 @@
-import React, {useState} from 'react';
-import {
-  View,
-  TouchableOpacity,
-  Text,
-  StyleSheet,
-  TextInput,
-} from 'react-native';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import React from 'react';
 
 import {connect} from 'react-redux';
 import {Constants} from 'helpers';
 
-import LoginScreen from './LoginScreen';
+import LoginScreen from './Screen';
 
 const Login = (props) => {
   const login = ({username, password}) => {
@@ -25,7 +17,7 @@ const Login = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-  isLoging: state.authen.isLoging,
+  isLoging: state.appState.isLoging,
 });
 const mapactionsTypeToProps = (dispatch) => ({
   login: (payload) =>

@@ -14,9 +14,20 @@ export const RouteKey = {
 
 export const ACTION_TYPES = {
   LOGIN: 'LOGIN',
-  CANCEL_LOGIN: 'CANCEL_LOGIN',
   LOGIN_SUCCESS: 'LOGIN_SUCCESS',
   LOGIN_FAIL: 'LOGIN_FAIL',
+  CANCEL_LOGIN: 'CANCEL_LOGIN',
+
+  GET_BOOKING: 'GET_BOOKING',
+  GET_BOOKING_SUCCESS: 'GET_BOOKING_SUCCESS',
+  GET_BOOKING_FAIL: 'GET_BOOKING_FAIL',
+  CANCEL_GET_BOOKING: 'CANCEL_GET_BOOKING',
+
+  CREATE_BOOKING: 'CREATE_BOOKING',
+  CREATE_BOOKING_SUCCESS: 'CREATE_BOOKING_SUCCESS',
+  CREATE_BOOKING_FAIL: 'CREATE_BOOKING_FAIL',
+  CANCLE_CREATE_BOOKING: 'CANCLE_CREATE_BOOKING',
+
   // navigation
   PUSH: 'push',
   POP: 'pop',
@@ -29,7 +40,6 @@ export const ACTION_TYPES = {
 export const INIT_STATES = {
   authen: {
     isLogined: false,
-    isLoging: false,
     token: '',
     expiredToken: '',
     username: '',
@@ -38,4 +48,13 @@ export const INIT_STATES = {
   navigator: {
     screen: '',
   },
+  appState: {
+    isloading: false,
+    isLoging: false,
+    isGetBooking: false,
+    isCreateBooking: false
+  },
+  bookings: {
+    data: []
+  }
 };
