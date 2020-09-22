@@ -42,7 +42,7 @@ const LoginScreen = (props) => {
           style={[styles.btn, disabled && styles.disabled]}
           onPress={() => login({username, password})}>
           {isLoging ? (
-            <ActivityIndicator />
+            <ActivityIndicator color="gray" />
           ) : (
             <Text style={styles.btnText}>Login</Text>
           )}
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
   title: {
     marginBottom: 50,
     fontSize: 30,
+    color: 'black',
     fontWeight: 'bold',
   },
   container: {
@@ -81,5 +82,6 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontSize: 14,
+    color: 'black',
   },
 });

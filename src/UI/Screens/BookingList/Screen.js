@@ -44,7 +44,7 @@ const BookingList = (props) => {
       <FloatBtn onPress={createBooking} />
       {isLoading && (
         <View style={styles.loadingV}>
-          <ActivityIndicator />
+          <ActivityIndicator color="gray" />
         </View>
       )}
     </View>
@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   subTitle: {
     fontWeight: 'bold',
     fontSize: 12,
+    color: 'black',
     marginBottom: 2,
   },
   value: {
@@ -79,6 +80,7 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: 'bold',
     fontSize: 20,
+    color: 'black',
     marginBottom: 5,
   },
   contentContainerStyle: {

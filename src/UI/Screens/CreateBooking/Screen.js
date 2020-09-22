@@ -5,13 +5,11 @@ import {
   Text,
   TouchableOpacity,
   ActivityIndicator,
-  Dimensions,
 } from 'react-native';
 import InputTitle from 'components/InputTitle';
 import Picker from 'components/Picker';
 import DatePicker from 'components/DatePicker';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 const DATA_PICKER = [
   {id: 1, label: 'Health Talk', value: 'Health Talk'},
@@ -27,43 +25,45 @@ const CreateBooking = (props) => {
   const [confirmDate, setConfirmDate] = useState('');
 
   return (
-    <KeyboardAwareScrollView
-      showsVerticalScrollIndicator={false}
-      showsHorizontalScrollIndicator={false}>
-      <View style={styles.container}>
-        <Picker
-          data={DATA_PICKER}
-          onSelect={setTypeEvent}
-          inputStyle={styles.inputStyle}
-          title={'Event'}
-          placeholder="Event"
-        />
-        <InputTitle
-          inputStyle={styles.inputStyle}
-          title={'Location'}
-          value={location}
-          onChangeText={setLocation}
-          placeholder="Location"
-        />
-        <DatePicker
-          inputStyle={styles.inputStyle}
-          title={'Confirm Date'}
-          onSelect={setConfirmDate}
-          placeholder="Confirm Date"
-        />
+    <View style={styles.view}>
+      <KeyboardAwareScrollView
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}>
+        <View style={styles.container}>
+          <Picker
+            data={DATA_PICKER}
+            onSelect={setTypeEvent}
+            inputStyle={styles.inputStyle}
+            title={'Event'}
+            placeholder="Event"
+          />
+          <InputTitle
+            inputStyle={styles.inputStyle}
+            title={'Location'}
+            value={location}
+            onChangeText={setLocation}
+            placeholder="Location"
+          />
+          <DatePicker
+            inputStyle={styles.inputStyle}
+            title={'Confirm Date'}
+            onSelect={setConfirmDate}
+            placeholder="Confirm Date"
+          />
 
-        <TouchableOpacity
-          style={[styles.btn]}
-          onPress={() => create({typeEvent, location, confirmDate})}>
-          <Text style={styles.btnText}>Submit</Text>
-        </TouchableOpacity>
-      </View>
+          <TouchableOpacity
+            style={[styles.btn]}
+            onPress={() => create({typeEvent, location, confirmDate})}>
+            <Text style={styles.btnText}>Submit</Text>
+          </TouchableOpacity>
+        </View>
+      </KeyboardAwareScrollView>
       {isLoading && (
         <View style={styles.loadingV}>
-          <ActivityIndicator />
+          <ActivityIndicator color="gray" />
         </View>
       )}
-    </KeyboardAwareScrollView>
+    </View>
   );
 };
 
@@ -73,12 +73,15 @@ CreateBooking.defaultProps = {};
 CreateBooking.propTypes = {};
 
 const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+  },
   loadingV: {
     position: 'absolute',
     top: 0,
     left: 0,
     right: 0,
-    height: SCREEN_HEIGHT,
+    bottom: 0,
     backgroundColor: 'rgba(0, 0, 0,0.1)',
     justifyContent: 'center',
     alignItems: 'center',
@@ -96,6 +99,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontSize: 14,
+    color: 'black',
   },
   inputStyle: {
     width: '100%',

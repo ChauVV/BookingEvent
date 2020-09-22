@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 14,
+    color: 'black',
   },
   placeholder: {
     fontSize: 14,
