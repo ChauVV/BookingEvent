@@ -13,10 +13,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // create store
-const store = createStore(
-  reducers,
-  compose(applyMiddleware(...middlewares)),
-);
-
+const store = createStore(reducers, compose(applyMiddleware(...middlewares)));
 
 export {store};

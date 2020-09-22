@@ -7,7 +7,7 @@ export default (state = Constants.INIT_STATES.appState, action) => {
       return {...state, isLoging: true};
     case Constants.ACTION_TYPES.LOGIN_SUCCESS:
     case Constants.ACTION_TYPES.LOGIN_FAIL:
-      case Constants.ACTION_TYPES.CANCEL_LOGIN:
+    case Constants.ACTION_TYPES.CANCEL_LOGIN:
       return {...state, isLoging: false};
 
     case Constants.ACTION_TYPES.GET_BOOKING:
@@ -20,8 +20,8 @@ export default (state = Constants.INIT_STATES.appState, action) => {
     case Constants.ACTION_TYPES.CREATE_BOOKING:
       return {...state, isCreateBooking: true};
     case Constants.ACTION_TYPES.CREATE_BOOKING_SUCCESS:
-      case Constants.ACTION_TYPES.CREATE_BOOKING_FAIL:
-        case Constants.ACTION_TYPES.CANCLE_CREATE_BOOKING:
+    case Constants.ACTION_TYPES.CREATE_BOOKING_FAIL:
+    case Constants.ACTION_TYPES.CANCLE_CREATE_BOOKING:
       return {...state, isCreateBooking: false};
 
     default:

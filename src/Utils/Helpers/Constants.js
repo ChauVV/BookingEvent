@@ -52,9 +52,9 @@ export const INIT_STATES = {
     isloading: false,
     isLoging: false,
     isGetBooking: false,
-    isCreateBooking: false
+    isCreateBooking: false,
   },
   bookings: {
-    data: []
-  }
+    data: [],
+  },
 };

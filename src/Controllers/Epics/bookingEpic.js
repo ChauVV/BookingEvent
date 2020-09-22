@@ -10,15 +10,14 @@ export default (action$, store, dependencies) => {
       return Observable.fromPromise(ClientService.getBookings(action.payload))
         .takeUntil(action$.ofType(Constants.ACTION_TYPES.CANCEL_GET_BOOKING))
         .mergeMap((response) => {
-          
           console.log('response: ', response);
           try {
             if (response.status === 200) {
               return Observable.concat(
                 Observable.of({
                   type: Constants.ACTION_TYPES.GET_BOOKING_SUCCESS,
-                  payload: response.data
-                })
+                  payload: response.data,
+                }),
               );
             } else {
               return Observable.concat(

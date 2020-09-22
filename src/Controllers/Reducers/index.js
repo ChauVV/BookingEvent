@@ -9,5 +9,5 @@ export default combineReducers({
   authen: authenReducer,
   navigator: navigationReducer,
   appState: appStateReducer,
-  bookings: bookingReducer
+  bookings: bookingReducer,
 });

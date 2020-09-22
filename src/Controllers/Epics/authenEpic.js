@@ -15,7 +15,7 @@ export default (action$, store, dependencies) => {
               return Observable.concat(
                 Observable.of({
                   type: Constants.ACTION_TYPES.LOGIN_SUCCESS,
-                  payload: {username: action.payload.username}
+                  payload: {username: action.payload.username},
                 }),
                 Observable.of({
                   type: Constants.ACTION_TYPES.REPLACE,

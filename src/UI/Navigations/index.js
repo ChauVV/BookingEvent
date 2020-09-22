@@ -41,7 +41,11 @@ const MainStack = () => {
         name="BookingList"
         component={BookingList}
       />
-      <MainSk.Screen name="CreateBooking" component={CreateBooking}  options={{title: 'Create New Booking'}}/>
+      <MainSk.Screen
+        name="CreateBooking"
+        component={CreateBooking}
+        options={{title: 'Create New Booking'}}
+      />
     </MainSk.Navigator>
   );
 };
@@ -55,8 +59,11 @@ const RootNavigation = () => {
           headerShown: false,
         }}>
         <Root.Screen name="AuthorizationStack" component={AuthorizationStack} />
-        <Root.Screen name="MainStack" component={MainStack} 
-        options={{headerShown: false}} />
+        <Root.Screen
+          name="MainStack"
+          component={MainStack}
+          options={{headerShown: false}}
+        />
       </Root.Navigator>
     </NavigationContainer>
   );
