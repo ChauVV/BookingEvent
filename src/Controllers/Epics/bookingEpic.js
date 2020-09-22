@@ -44,13 +44,13 @@ export default (action$, store, dependencies) => {
                 Observable.of({
                   type: Constants.ACTION_TYPES.CREATE_BOOKING_SUCCESS,
                   payload: response.data,
-                }),
+                }).delay(50),
+                Observable.of({
+                  type: Constants.ACTION_TYPES.POP,
+                }).delay(50),
                 Observable.of({
                   type: Constants.ACTION_TYPES.GET_BOOKING,
                   payload: {username: action.payload.created_by},
-                }),
-                Observable.of({
-                  type: Constants.ACTION_TYPES.POP,
                 }),
               );
             } else {

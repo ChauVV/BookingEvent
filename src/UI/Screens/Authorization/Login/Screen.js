@@ -35,6 +35,7 @@ const LoginScreen = (props) => {
           value={password}
           onChangeText={setPassword}
           placeholder="Password"
+          secureTextEntry
         />
         <TouchableOpacity
           disabled={disabled || isLoging}
