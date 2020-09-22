@@ -1,5 +1,4 @@
 import {Observable} from 'rxjs';
-
 import {Constants} from 'helpers';
 import ClientService from 'controllers/ClientServer';
 

@@ -5,7 +5,6 @@ export default class ClientServer {
     const url =
       'https://dfljauq3a1.execute-api.ap-southeast-1.amazonaws.com/default/DeveloperTest_Login';
     const headers = {};
-    console.log('login with: ', username, password, url);
     const data = {username, password};
 
     return post({url, data, headers});
@@ -15,7 +14,6 @@ export default class ClientServer {
     const url =
       'https://d0irjg216a.execute-api.ap-southeast-1.amazonaws.com/default/DeveloperTest_CreateBooking';
     const headers = {};
-    console.log('createBooking with: ', data, url);
 
     return post({url, data, headers});
   };
@@ -24,7 +22,6 @@ export default class ClientServer {
     const url =
       'https://u7b754tqv4.execute-api.ap-southeast-1.amazonaws.com/default/DeveloperTest_GetBookings';
     const headers = {};
-    console.log('getBookings with: ', username, url);
     const data = {user: username};
 
     return post({url, data, headers});

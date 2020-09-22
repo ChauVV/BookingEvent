@@ -7,7 +7,7 @@ import {Constants} from 'helpers';
 import Screen from './Screen';
 
 const BookingList = (props) => {
-  const {getBooking, username, bookings, navigation} = props;
+  const {getBooking, isLoading, username, bookings, navigation} = props;
 
   useEffect(() => {
     getBooking({username});
@@ -17,10 +17,17 @@ const BookingList = (props) => {
     navigation.push(Constants.RouteKey.CreateBooking);
   };
 
-  return <Screen bookings={[...bookings]} createBooking={createBooking} />;
+  return (
+    <Screen
+      isLoading={isLoading}
+      bookings={[...bookings]}
+      createBooking={createBooking}
+    />
+  );
 };
 
 const mapStateToProps = (state) => ({
+  isLoading: state.appState.isGetBooking,
   username: state.authen.username,
   bookings: state.bookings.data,
 });

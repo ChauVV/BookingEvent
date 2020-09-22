@@ -31,22 +31,25 @@ const AuthorizationStack = () => {
 const MainSk = createStackNavigator();
 const MainStack = () => {
   return (
-    <MainSk.Navigator
-      screenOptions={{
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: Colors.header},
-      }}>
-      <MainSk.Screen
-        options={{title: 'DashBoard'}}
-        name="BookingList"
-        component={BookingList}
-      />
-      <MainSk.Screen
-        name="CreateBooking"
-        component={CreateBooking}
-        options={{title: 'Create New Booking'}}
-      />
-    </MainSk.Navigator>
+    <>
+      <StatusBar barStyle={'light-content'} />
+      <MainSk.Navigator
+        screenOptions={{
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: Colors.header},
+        }}>
+        <MainSk.Screen
+          options={{title: 'DashBoard'}}
+          name="BookingList"
+          component={BookingList}
+        />
+        <MainSk.Screen
+          name="CreateBooking"
+          component={CreateBooking}
+          options={{title: 'Create New Booking', headerBackTitle: ' '}}
+        />
+      </MainSk.Navigator>
+    </>
   );
 };
 

@@ -1,8 +1,6 @@
 import React from 'react';
-
 import {connect} from 'react-redux';
 import {Constants} from 'helpers';
-
 import LoginScreen from './Screen';
 
 const Login = (props) => {

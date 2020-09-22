@@ -5,9 +5,9 @@ import {
   Text,
   StyleSheet,
   ActivityIndicator,
-  TextInput,
 } from 'react-native';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import InputTitle from 'components/InputTitle';
 
 const LoginScreen = (props) => {
   const {login, isLoging} = props;
@@ -22,19 +22,18 @@ const LoginScreen = (props) => {
       showsHorizontalScrollIndicator={false}>
       <View style={styles.container}>
         <Text style={styles.title}>Welcome</Text>
-        <Text style={styles.lblTitle}>Username</Text>
-        <TextInput
-          style={styles.input}
+        <InputTitle
+          editable={!isLoging}
+          title={'Username'}
           value={username}
           onChangeText={setUsername}
           placeholder="abc@gmail.com"
         />
-        <Text style={styles.lblTitle}>Password</Text>
-        <TextInput
-          style={styles.input}
+        <InputTitle
+          editable={!isLoging}
+          title={'Password'}
           value={password}
           onChangeText={setPassword}
-          secureTextEntry
           placeholder="Password"
         />
         <TouchableOpacity
@@ -62,21 +61,6 @@ const styles = StyleSheet.create({
     marginBottom: 50,
     fontSize: 30,
     fontWeight: 'bold',
-  },
-  lblTitle: {
-    width: '60%',
-    marginTop: 15,
-    marginBottom: 5,
-    fontWeight: 'bold',
-  },
-  input: {
-    borderRadius: 5,
-    borderColor: 'gray',
-    borderWidth: 1,
-    fontSize: 14,
-    width: '60%',
-    height: 40,
-    paddingHorizontal: 10,
   },
   container: {
     flex: 1,

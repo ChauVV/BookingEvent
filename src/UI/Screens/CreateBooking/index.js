@@ -1,19 +1,37 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-// import PropTypes from 'prop-types'
+import {connect} from 'react-redux';
+import {Constants} from 'helpers';
+import Screen from './Screen';
 
 const CreateBooking = (props) => {
-  return <View style={styles.container} />;
+  const {username, createBooking, isLoading} = props;
+
+  const create = (data) => {
+    const payload = {
+      event_title: data.typeEvent,
+      event_location: data.location,
+      confirmed_datetime: data.confirmDate,
+      created_at: new Date().toISOString().replace('Z', ''),
+      created_by: username,
+    };
+    createBooking(payload);
+  };
+
+  return <Screen create={create} isLoading={isLoading} />;
 };
 
-export default CreateBooking;
+const mapStateToProps = (state) => ({
+  username: state.authen.username,
+  isLoading: state.appState.isCreateBooking,
+});
+const mapactionsTypeToProps = (dispatch) => ({
+  createBooking: (payload) =>
+    dispatch({
+      type: Constants.ACTION_TYPES.CREATE_BOOKING,
+      payload,
+    }),
+});
+export default connect(mapStateToProps, mapactionsTypeToProps)(CreateBooking);
 
 CreateBooking.defaultProps = {};
 CreateBooking.propTypes = {};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'lightgreen',
-  },
-});

@@ -15,7 +15,7 @@ export default (state = Constants.INIT_STATES.navigator, action) => {
       );
       return state;
     case Constants.ACTION_TYPES.POP:
-      navigationRef.current?.dispatch(StackActions.back());
+      navigationRef.current?.dispatch(StackActions.pop(1));
       return state;
     default:
       return state;
