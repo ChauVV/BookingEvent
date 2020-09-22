@@ -11,4 +11,4 @@ $ yarn android|ios
 
 ## Demo
 
-<img src="./demo.gif" height="448" width="207" />
+<img src="./demo.gif" height="815" width="373" />
